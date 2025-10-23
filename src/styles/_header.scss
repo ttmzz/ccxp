@@ -1,0 +1,228 @@
+@use './variables';
+
+@mixin button-structure {
+  text-align: center;
+  font-weight: 700;
+  padding: 18px 14px 17px;
+  border-radius: 40px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+
+.header {
+  background-color: variables.$corDeFundoPrincipal;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+
+  @media (max-width: 480px) {
+    width: 360px;
+
+  }
+
+  .container {
+    height: 68px;
+
+    .cabecalho {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 20px;
+
+      &__logo {
+        a {
+          display: flex;
+          align-items: center;
+        }
+
+        img {
+          width: 136px;
+          height: 52px;
+          object-fit: contain;
+        }
+      }
+
+      /* Ícone do menu hamburger */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 32px;
+        height: 17.6px;
+        cursor: pointer;
+        z-index: 5;
+
+        span {
+          display: block;
+          height: 3px;
+          width: 100%;
+          background-color: #fff; /* cor fixa visível em fundo escuro */
+          border-radius: 2px;
+          transition: 0.3s;
+        }
+
+        &.active span:nth-child(1) {
+          transform: rotate(45deg) translate(5px, 5px);
+        }
+        &.active span:nth-child(2) {
+          opacity: 0;
+        }
+        &.active span:nth-child(3) {
+          transform: rotate(-45deg) translate(5px, -5px);
+        }
+      }
+
+      &__list {
+        .lista {
+          display: flex;
+          gap: 20px;
+
+          &__item {
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+
+            a {
+              color: variables.$corDoTextoPrincipal;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+
+      &__botoes {
+        display: flex;
+        gap: 10px;
+      }
+
+      &__button1 {
+        background-color: variables.$corDoButton1;
+        color: variables.$corDeFundoPrincipal;
+        @include button-structure;
+
+        &:hover {
+          background-color: #d2b300;
+        }
+      }
+
+      &__button2 {
+        background-color: variables.$corDoButton2;
+        color: variables.$corDoTextoPrincipal;
+        @include button-structure;
+
+        &:hover {
+          background-color: rgba(84, 67, 61, 0.932);
+        }
+      }
+    }
+  }
+  
+  /* Menu hamburger escondido no desktop */
+  .hamburger {
+    display: none;
+  }
+}
+
+  
+
+/* MOBILE — até 480px*/
+@media (max-width: 1021px) {
+  .cabecalho {
+    position: relative;
+    justify-content: space-between;
+    padding: 8px 20px;
+    overflow: visible;
+
+    .hamburger {
+      display: flex !important;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1050; /* garante que fique visível acima de tudo */
+    }
+
+    &__list {
+      display: none;
+      position: absolute;
+      top: 68px;
+      left: 0;
+      width: 100%;
+      background-color: variables.$corDeFundoPrincipal;
+      text-align: center;
+      padding: 15px 0;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.3s ease-in-out;
+
+      /* sombra abaixo do menu */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+      &.active {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .lista {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+
+    /* Ajuste dos botões no mobile */
+    &__botoes {
+      display: none;
+      justify-content: center;
+      gap: 12px; /* espaço entre botões */
+      position: absolute;
+      top: calc(68px + 280px); /* afasta os botões da lista */
+      left: 0;
+      width: 100%;
+      background-color: variables.$corDeFundoPrincipal;
+      padding: 25px 0 20px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.3s ease-in-out;
+
+      /* sombra igual à do menu */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+      &.active {
+        display: flex;
+        flex-direction: row; /* botões lado a lado */
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      button {
+        width: 40%; /* botões menores */
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  /* Faz o conteúdo da página descer quando o menu abre */
+  body.menu-aberto {
+    main,
+    section:not(.header),
+    footer {
+      transition: transform 0.3s ease;
+      transform: translateY(350px); /* altura do deslocamento */
+    }
+  }
+}
+
+/* TELAS GRANDES — mantém seu layout original */
+@media (min-width: 481px) {
+  body.menu-aberto {
+    main,
+    section,
+    footer {
+      transform: none;
+    }
+  }
+}

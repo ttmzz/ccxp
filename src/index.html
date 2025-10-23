@@ -4,11 +4,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CCXP</title>
+    <link rel="icon" href="./images/ccxp-icon.ico"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./styles/main.scss">
 </head>
 <body>
-    
+    <section class="header">
+  <div class="container">
+    <div class="cabecalho">
+      <div class="cabecalho__logo">
+        <a href="index.html"><img src="./images/logo.png" alt="Logo"></a>
+      </div>
 
+      <!-- Ícone do menu hamburger -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- Lista de links -->
+      <div class="cabecalho__list" id="menu">
+        <ul class="lista">
+          <li class="lista__item"><a href="#">A CCXP</a></li>
+          <li class="lista__item"><a href="#">Ingressos</a></li>
+          <li class="lista__item"><a href="#">CCXP hero</a></li>
+          <li class="lista__item"><a href="#">line-up</a></li>
+          <li class="lista__item"><a href="#">artists' valley</a></li>
+          <li class="lista__item"><a href="#">cosplay</a></li>
+          <li class="lista__item"><a href="#">blast!pitch</a></li>
+          <li class="lista__item"><a href="#">unlock</a></li>
+          <li class="lista__item"><a href="#">marcas</a></li>
+        </ul>
+      </div>
+
+      <!-- Botões -->
+      <div class="cabecalho__botoes">
+        <button class="cabecalho__button1">Comprar ingresso</button>
+        <button class="cabecalho__button2">Comprar Epic Transfer</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section class="painel">
+        <div class="container">
+            <div class="campo">
+                <img src="./images/BLAST_DESTAQUE.png" alt="DESTAQUE">
+                <p class="data--conte"><span id="data-conte"></span></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="informations">
+        <div class="container">
+            <div class="destaques">
+                <div class="destaques__1" data-aos="fade-right">
+                    <div class="texto-destaque">
+                        <h2>QUEM PODE PARTICIPAR?</h2>
+                        <p>Essa é uma oportunidade imperdível para produtores independentes, artistas, fãs-clubes, criadores de conteúdo, produtoras, músicos, roteiristas e quem mais quiser participar, de contar sobre seus trabalhos para um público apaixonado, além de deixar a sua marca em um palco da CCXP.</p>
+                        <p>Qualquer pessoa maior de 18 anos, empresa ou marca que tenha um conteúdo interessante e alinhado ao universo da cultura pop para mostrar está convidado. Não importa se é pesquisa, trabalho, arte, debate ou uma grande piração, tem lugar pra ideias de todos os tamanhos e formatos no <span style="font-weight: bold;">Blast! Pitch</span>.</p>
+                    </div>
+                    <img src="./images/duvidas.png" alt="Dúvidas">
+                
+                </div>
+
+                <div class="destaques__2" data-aos="fade-right">
+                    <div class="texto-destaque">
+                        <h2>COMO PARTICIPAR</h2>
+                        <div class="texto-destaque__ajustado">
+                            <ol>
+                                <li>Pessoas, empresas ou marcas interessadas em se apresentar no evento devem se inscrever por meio de formulário no site da CCXP.</li>
+                                <li>Ao término da inscrição, o júri CCXP avaliará cada candidato, classificará aqueles que atendem aos critérios estabelecidos e estes seguirão para votação popular.</li>
+                                <li>A votação será realizada pelo site da CCXP, e os 2 mais votados pelo público se apresentarão na CCXP25. Eles serão contatados pela organização para discutir todos os detalhes da participação.</li>
+                                <li>As apresentações acontecerão na quinta (04/12) e na sexta-feira (05/12) da CCXP25, um (1) painel de até 30 minutos por dia, no palco Blast!. A organização definirá o dia em que cada escolhido se apresentará.</li>
+                                <li>Os painéis escolhidos poderão ter até 6 (seis) pessoas no palco, e cada uma terá o direito a um acompanhante. Os selecionados e acompanhantes terão acesso sem custo ao evento no dia da apresentação.</li>
+                                <li>A proposta selecionada receberá uma ajuda de custo de até R$ 1.000,00. Confira o regulamento para conferir todas as condições e regras.</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <img id="img-participar" src="./images/como_participar.png" alt="Como participar">
+                    
+                </div>
+
+                <div class="destaques__3" data-aos="fade-right">
+                    <div class="texto-destaque">
+                        <h2>QUAIS OS FORMATOS SUGERIDOS?</h2>
+                        <div class="texto-destaque__ajustado">
+                            <p>Nenhum formato está proibido desde que caiba na estrutura do Palco Blast! e respeite as normas de segurança, queremos que os participantes tenham liberdade para criar. No entanto, os formatos mais usados são:</p>
+                            <ul>
+                                <li> <span style="font-weight: bold;">></span> Painel: uma conversa ao vivo com um mediador e um ou mais participantes. É um espaço para compartilhar ideias, experiências, bastidores, processos criativos ou qualquer tema, no nosso caso, ligado ao universo da cultura pop.</li>
+                                <li> <span style="font-weight: bold;">></span> Leitura: sessões dedicadas ao lançamento de novos livros/quadrinhos, em que o autor e o público mergulham juntos nos temas, ideias e universos presentes na obra.</li>
+                                <li> <span style="font-weight: bold;">></span> Bate-papo: é aquele formato de conversa que parece íntima entre duas pessoas mas com conteúdo pra alugar um triplex nas ideias da plateia.</li>
+                                <li> <span style="font-weight: bold;">></span> Apresentação: formato ideal pra quem quer fazer um mergulho mais aprofundado em um tema específico. Você pode incluir slides, vídeos ou outros recursos visuais pra deixar tudo mais claro e dinâmico.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <img src="./images/sugestoes.png" alt="Sugestoes">
+                
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./scripts/main.js"></script>
 </body>
 </html>

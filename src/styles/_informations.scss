@@ -1,0 +1,227 @@
+@use 'variables';
+
+@mixin texto-formatado {
+    color: variables.$corDeFundoPrincipal;
+    width: 80%;
+    margin-left: 80px;
+    margin-bottom: 1rem;
+    font-size: 15px;
+    color: variables.$corDoTextoEmDestaque;
+    line-height: 26.35px;
+
+    @media (max-width: 640px) {
+        display: block;
+        font-size: .875rem;
+        line-height: 1.25rem;
+        margin-left: 80px;
+    }
+}
+
+@mixin texto-ajustado {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+@mixin titulo-do-conteudo {
+    font-size: 35px;
+    font-weight: bolder;
+    height: 86px;
+    margin-bottom: 20px;
+
+   @media (max-width: 640px) {
+        position: relative;
+        font-size: 26px;
+        margin-top: 40px;
+        padding-top: 14px;
+        line-height: 2.6rem;
+    }
+    
+}
+
+@mixin destaques123 {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    img {
+        width: 700px;
+        height: 468px;
+        border-radius: 16px;
+    }
+
+    #img-participar {
+        height: 600px;
+        margin-left: 34px;
+
+    }
+
+    @media (max-width: 640px) {
+        flex-direction: column-reverse;
+
+        img, #img-participar {
+            width: 400px;
+            height: 268px;
+
+        }       
+    }
+}
+
+
+.informations {
+    background: #fffefe url('../images/noise.png');
+
+    .destaques {
+        display: block;
+        width: 98%;
+        margin-top: 40px;
+        line-height: 8rem;
+
+        &__1 {
+            @include destaques123;
+            top: 80px;
+
+            .texto-destaque {
+                @include texto-ajustado;
+
+                h2 {
+                    @include titulo-do-conteudo;
+                    margin-right: 218px;
+                   
+
+                    @media (max-width: 640px) {
+                      left: 140px;
+                      width: 100%;
+
+                    }
+                }
+
+                p {
+                    color: variables.$corDeFundoPrincipal;
+                    height: 30%;
+                    width: 80%;
+                    margin-bottom: 1rem;
+                    font-size: 17px;
+                    color: variables.$corDoTextoEmDestaque;
+                    line-height: 26.35px;
+
+                    @media (max-width: 640px) {
+                      font-size: 14px;
+                    }
+                    
+                }
+            }
+
+        }
+
+        &__2 {
+
+            @include destaques123;
+            flex-direction: row-reverse;
+            top: 180px;
+
+            @media (max-width: 640px) {
+                flex-direction: column-reverse;
+                
+            }
+
+            .texto-destaque {
+                @include texto-ajustado;
+
+                h2 {
+                    @include titulo-do-conteudo;
+                    margin-right: 420px;
+
+                    @media (max-width: 640px) {
+                      left: 380px;
+                      width: 100%;
+                      
+                    }
+                }
+
+                &__ajustado {
+                    margin-bottom: 60px;
+                }
+
+                ol {
+
+                   li {
+                        color: variables.$corDeFundoPrincipal;
+                        height: 30%;
+                        width: 80%;
+                        list-style: decimal;
+                        margin-left: 34px;
+                        margin-bottom: 1rem;
+                        font-size: 15px;
+                        color: variables.$corDoTextoEmDestaque;
+                        line-height: 26.35px;
+
+                        @media (max-width: 640px) {
+                            font-size: 14px;
+                            width: 54%;
+                            margin-left: 136px;
+                        }
+                    
+                    }
+
+                    li::marker {
+                      font-weight: bolder;
+                   }
+                }
+            }
+
+        }
+
+        &__3 {
+
+            @include destaques123;
+            top: 280px;
+
+            .texto-destaque {
+                @include texto-ajustado;
+
+                h2 {
+                    @include titulo-do-conteudo;
+                    width: 100%;
+                    margin-right: 218px;
+                    margin-left: 380px;
+                    
+                    @media (max-width: 640px) {
+                      width: 40%;
+                      right: 50px;
+                      
+                    }
+                    
+                }
+
+                &__ajustado {
+                    margin-bottom: 60px;
+
+                    @media (max-width: 640px) {
+                        margin-top: 40px;
+                    }
+
+                    p {
+                       height: 30%;
+                    }
+
+                    ul li, p {
+                        @include texto-formatado;
+
+                        @media (max-width: 640px) {
+                            font-size: 14px;
+                            width: 46%;
+                            margin-left: 208px;
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
+    
+}
