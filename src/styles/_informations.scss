@@ -55,7 +55,7 @@
 
     #img-participar {
         height: 600px;
-        margin-left: 34px;
+        margin-left: 10px;
 
     }
 
@@ -63,8 +63,10 @@
         flex-direction: column-reverse;
 
         img, #img-participar {
-            width: 400px;
-            height: 268px;
+            max-width: 90%; // garante que não ultrapasse a tela
+            width: 400px;   // reduzido de 400px para 300px
+            height: auto;   // mantém proporção
+
 
         }       
     }

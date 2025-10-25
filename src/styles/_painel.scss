@@ -25,26 +25,26 @@
         }
 
         .data--conte {
-            background-color: variables.$corDoButton1;
-            color: variables.$corDeFundoPrincipal;
-            font-weight: bolder;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            font-size: 1.5rem;
-            text-align: center;
+  background-color: variables.$corDoButton1;
+  color: variables.$corDeFundoPrincipal;
+  font-weight: bolder;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
 
-            @media (max-width: 640px) {
-                position: relative;
-                bottom: 4px;
-                display: flex;
-                align-items: center;
-                padding-left: 6.6px;
-                font-size: .88rem;
-                height: 90px;
-                line-height: 1.25rem;
-                
-               
-            }
-        }
+  @media (max-width: 640px) {
+    position: relative;
+    bottom: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center; // centraliza horizontalmente
+    padding-right: 2.6rem;
+    font-size: .780rem;    // menor no mobile
+    height: 60px;       // altura reduzida
+    line-height: 1.2rem;
+  }
+}
+
 
     }
 }
